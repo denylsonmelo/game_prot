@@ -6,31 +6,33 @@ public class Personagem : MonoBehaviour
 
     [HideInInspector]
     public int variavel = 1;
-    AnimatorController animacao;
+    //AnimatorController animacao;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Debug.Log("dentr do start");
-        animacao = GetComponent<AnimatorController>();  SetBool("mover", true)
+        //animacao = GetComponent<AnimatorController>();  animacao.SetBool("mover", true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(variavel<10)
+        if (variavel < 10)
         {
-           Debug.Log("dentro d update: ");
-           variavel++; 
+            Debug.Log("dentro d update: ");
+            variavel++;
         }
     }
 
-    private void Awake() {
+    private void Awake()
+    {
         Debug.Log("dentr do awake");
-        
+
     }
 
-    private void FixedUpdate() {
-        
+    private void FixedUpdate()
+    {
+
     }
 }
