@@ -20,6 +20,7 @@ public class Personagem : MonoBehaviour
     {
         if (variavel < 10)
         {
+            //GetComponent<Anima
             Debug.Log("dentro d update: ");
             variavel++;
         }
