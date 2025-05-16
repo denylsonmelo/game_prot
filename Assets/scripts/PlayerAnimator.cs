@@ -10,7 +10,7 @@ public class PlayerAnimator : MonoBehaviour
 	private Animator _animator;
 	private static readonly int _Move = Animator.StringToHash("walking");
 	private static readonly int _JumpState = Animator.StringToHash("JumpState");
-	private static readonly int _IsJumping = Animator.StringToHash("IsJumping");
+	private static readonly int _IsJumping = Animator.StringToHash("jumping");
 	//private static readonly int WallGrabbing = Animator.StringToHash("WallGrabbing");
 	//private static readonly int IsDashing = Animator.StringToHash("IsDashing");
 
@@ -26,8 +26,6 @@ public class PlayerAnimator : MonoBehaviour
 		// Idle & Running animation
 		_animator.SetFloat(_Move, Mathf.Abs(_rigidBody.linearVelocity.x));
 
-		_animator.SetBool("idle", false);
-
 		// Jump state (handles transitions to falling/jumping)
 		float verticalVelocity = _rigidBody.linearVelocity.y;
 		_animator.SetFloat(_JumpState, verticalVelocity);
@@ -35,6 +33,7 @@ public class PlayerAnimator : MonoBehaviour
 		// Jump animation
 		if (!_controller.isGrounded && !_controller.actuallyWallGrabbing)
 		{
+			//Debug.Log("entrrou");
 			_animator.SetBool(_IsJumping, true);
 		}
 		else

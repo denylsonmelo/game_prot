@@ -9,13 +9,13 @@ public class InputSystem : MonoBehaviour
 
 	public static float HorizontalRaw()
 	{
-		Debug.Log("HorizontalRaw: " + Input.GetAxisRaw(HorizontalInput));
+		//Debug.Log("HorizontalRaw: " + Input.GetAxisRaw(HorizontalInput));
 		return Input.GetAxisRaw(HorizontalInput);
 	}
 
 	public static bool Jump()
 	{
-		Debug.Log("Jump " + Input.GetButtonDown(JumpInput));
+		//Debug.Log("Jump " + Input.GetButtonDown(JumpInput));
 		return Input.GetButtonDown(JumpInput);
 	}
 
