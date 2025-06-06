@@ -11,6 +11,7 @@ public class PlayerAnimator : MonoBehaviour
 	private static readonly int _Move = Animator.StringToHash("walking");
 	private static readonly int _JumpState = Animator.StringToHash("JumpState");
 	private static readonly int _IsJumping = Animator.StringToHash("jumping");
+	private static readonly int _IsHurting = Animator.StringToHash("hurting");
 	//private static readonly int WallGrabbing = Animator.StringToHash("WallGrabbing");
 	//private static readonly int IsDashing = Animator.StringToHash("IsDashing");
 
@@ -23,6 +24,9 @@ public class PlayerAnimator : MonoBehaviour
 
 	private void Update()
 	{
+
+		//_animator.SetTrigger(_IsHurting, _controller.isHurting);
+
 		// Idle & Running animation
 		_animator.SetFloat(_Move, Mathf.Abs(_rigidBody.linearVelocity.x));
 

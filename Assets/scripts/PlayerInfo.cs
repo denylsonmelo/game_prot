@@ -13,18 +13,24 @@ public class PlayerInfo : MonoBehaviour
     [SerializeField]
     private int attack = 10;
 
-    void Start()
-    {
-        //healthActual = healthMax;
-    }
-
     public int getLifeMax()
     {
         return lifeMax;
     }
+
+    public int getSpecialMax()
+    {
+        return 100;
+    }
+
     public int getLifeActual()
     {
         return lifeActual;
+    }
+
+    public int getSpecialActual()
+    {
+        return special;
     }
 
     public void takeDamage(int amount)
@@ -44,5 +50,14 @@ public class PlayerInfo : MonoBehaviour
 
         lifeActual += amount;
         if (lifeActual > lifeMax) lifeActual = lifeMax;
+    }
+
+    public void recover(int amount)
+    {
+        if (amount < 0)
+            return;
+
+        special += amount;
+        if (special > getSpecialMax()) special = getSpecialMax();
     }
 }
